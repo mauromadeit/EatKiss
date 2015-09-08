@@ -1,0 +1,126 @@
+template(name="home")
+  nav(class="white" role="navigation")
+    .nav-wrapper.container
+      a.brand-logo(id="logo-container" href="#") Logo
+      ul.right.hide-on-med-and-down
+        li
+          a(href="#") Navbar Link
+
+      ul#nav-mobile.side-nav
+        li
+          a(href="#") Navbar Link
+
+      a.button-collapse.grey-text(href="#" data-activates="nav-mobile")
+        i.mdi-navigation-menu
+
+  .parallax-container
+    br
+    br
+    h1.header.center.red-text.text-darken-2 EAT/KISS
+
+    .row.center
+      h5.header.col.s12.light.white-text A boutique agency suited for your needs.
+      h6.header.col.s12.light.white-text Located in Miami
+
+    .parallax
+      img(src="miami_sunrise.jpg" alt="miami_sunrise")
+      
+  .section.no-pad-bot
+    .container
+      br
+      br
+
+      #masonry-grid.row
+        .col.s12.m6.l4
+          .card
+            .card-image
+              img(src="background1.jpg")
+            .card-content.center
+              span.card-title Card Title
+
+        .col.s12.m6.l4
+          .card
+            .card-image
+              img(src="background1.jpg")
+            .card-content.center
+              span.card-title Card Title
+
+        .col.s12.m6.l4
+          .card
+            .card-image
+              img(src="background1.jpg")
+            .card-content.center
+              span.card-title Card Title
+
+        .col.s12.m6.l4
+          .card
+            .card-image
+              img(src="background1.jpg")
+            .card-content.center
+              span.card-title Card Title
+
+        .col.s12.m6.l4
+          .card
+            .card-image
+              a.modal-trigger.waves-effect.waves-light(href="#modal1")
+                img(src="background1.jpg")
+            .card-content.center
+              a.modal-trigger(href="#modal1")
+                span.card-title #{foobar}
+
+
+        .col.s12.m6.l4
+          .card
+            .card-image
+              a.modal-trigger.waves-effect.waves-light(href="#modal1")
+                img(src="background1.jpg")
+            .card-content.center
+              a.modal-trigger(href="#modal1")
+                span.card-title Card Title
+
+  #modal1.modal
+          .modal-content
+            .row
+              .slider
+                ul.slides
+                  li
+                    img.responsive-img(src="background2.jpg" alt="img")
+                  li
+                    img.responsive-img(src="background3.jpg" alt="img")
+                  li
+                    img.responsive-img(src="background1.jpg" alt="img")
+            .row
+                p.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eros libero, dapibus sed vestibulum sit amet, sagittis sit amet mauris. Nam tempus, neque ac tincidunt varius, dolor purus posuere tellus, id condimentum metus leo in ex. Nunc rhoncus orci ligula, ac venenatis velit sodales non. In quis risus id ligula venenatis tristique. In pharetra placerat sapien sed rhoncus. Nulla facilisi. Phasellus fringilla dapibus nibh, in cursus nisl consectetur non. Vivamus vitae iaculis lorem. Sed eget posuere elit. Nulla mattis, neque nec laoreet consequat, lorem velit elementum odio, ut tincidunt justo nisl et sapien. Nunc quis pellentesque est.
+                p.
+                  Suspendisse non magna libero. Quisque sed massa vitae augue lacinia suscipit at id risus. Cras sagittis viverra lectus, sed blandit lorem efficitur sed. Nam nunc lorem, ornare sed tristique eu, porta vitae purus. Integer eget lobortis lacus. Praesent a elementum nunc. Ut fermentum finibus fringilla. Morbi dictum, sapien vel laoreet tincidunt, enim quam consectetur turpis, sit amet consectetur tellus ipsum eget nibh. Aenean maximus placerat est eget pellentesque.
+          
+
+  footer.page-footer.teal
+    .container
+      .row
+        .col.l6.s12
+          h5.white-text Company Bio
+          p.grey-text.text-lighten-4
+            We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.
+
+        .col.l3.s12
+          h5.white-text Settings
+          ul
+            li
+              a.white-text(href="#!") Link 1
+            li
+              a.white-text(href="#!") Link 2
+            li
+              a.white-text(href="#!") Link 3
+
+        .col.l3.s12
+          h5.white-text Connect
+          ul
+            li
+              a.white-text(href="#!") Link 1
+
+    .footer-copyright
+      .container
+        span Made by
+          a.brown-text.text-lighten-3(href="http://materializecss.com") Materialize
