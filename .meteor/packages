@@ -13,3 +13,5 @@ iron:router
 coffeescript
 poetic:materialize-scss
 mquandalle:jade
+fortawesome:fontawesome
+email
