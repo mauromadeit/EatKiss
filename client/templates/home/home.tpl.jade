@@ -1,0 +1,135 @@
+//-
+ nav(class="white" role="navigation")
+  .nav-wrapper.container
+    a.brand-logo(id="logo-container" href="#") Logo
+    ul.right.hide-on-med-and-down
+      li
+        a(href="#") Navbar Link
+
+    ul#nav-mobile.side-nav
+      li
+        a(href="#") Navbar Link
+
+    a.button-collapse.grey-text(href="#" data-activates="nav-mobile")
+      i.mdi-navigation-menu
+
+// Top Section
+.parallax-container
+  br
+  br
+  h1.header.center.red-text.text-darken-2 EAT/KISS
+
+  .row.center
+    h5.header.col.s12.light.white-text A boutique agency suited for your needs.
+    h6.header.col.s12.light.white-text Located in Miami
+
+  .parallax
+    img(src="miami_sunrise.jpg" alt="miami_sunrise")
+
+// Services
+.section
+  .container
+
+    .section
+      p.flow-text.center.
+        EAT/KISS a project-based boutique agency that provides most types of services. We find the right people and places you need. We adapt to your needs.
+   
+    br
+    br
+
+    #masonry-grid.row
+      each services
+        .col.s12.m6.l4
+          .card
+            .card-image
+              a.modal-trigger.waves-effect.waves-light(href="##{this.shortName}")
+                img(src="#{this.mainImg}")
+            .card-content.center
+              a.modal-trigger(href="##{this.shortName}")
+                span.card-title #{this.name}
+
+// Call to Action
+.parallax-container
+  .parallax
+    img(src="miami_sunrise.jpg" alt="miami_sunrise")
+  
+
+.section
+  .container
+
+  br
+  br
+  h1.header.center.red-text.text-darken-2 Connect to be Connected
+
+  .row.center
+    .col.s12.m6
+      p.flow-text.
+        Resources for your project
+      a.modal-trigger.waves-effect.wave-light.btn-large(href="#client") Connect
+    .col.s12.m6
+      p.flow-text.
+        Talent
+      a.modal-trigger.waves-effect.wave-light.btn-large(href="#talent") Connect
+
+
+// Modals
+each services
+  div(id="#{this.shortName}" class="modal")
+    .modal-content
+      .row
+        .slider
+          ul.slides
+            each this.imgs
+              li
+                img.responsive-img(src="#{img}" alt="#{alt}")
+      .row
+        each this.copy
+          p.
+            #{this}
+
+#client.modal
+  .modal-content
+    .row
+      .col.s12
+        form#clientForm.col.s12
+          .row
+            .input-field.col.s6
+              input#name(type="text")
+              label(for="form-name") Name
+            .input-field.col.s6
+              input#email(type="email")
+              label(for="form-email") Email
+          .row
+            .input-field.col.s12
+              input#subject(type="text")
+              label(for="subject") Subject
+          textarea#message.materialize-textarea(placeholder="Your Message")
+          button.btn.waves-effect.waves-light(type="submit") Send
+    
+
+footer.page-footer.red
+  .container
+    .row
+      .col.l6.s12
+        h5.white-text Connect with us and we'll connect you
+
+      nav
+       .col.l3.s12.offset-l3.nav-wrapper
+        ul
+          li
+            a.white-text(href="#!")
+              i.fa.fa-instagram.fa-2x
+          li
+            a.white-text(href="#!")
+              i.fa.fa-twitter.fa-2x
+          li
+            a.white-text(href="#!")
+              i.fa.fa-facebook.fa-2x
+
+  .footer-copyright
+    .container
+      span Made by
+        a(href="http://mptysquare.com")
+         strong.white-text MptySquare
+        a(href="http://github.com/MptySquare")
+          i.fa.fa-github.fa-lg.white-text
