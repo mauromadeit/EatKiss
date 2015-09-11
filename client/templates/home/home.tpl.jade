@@ -14,13 +14,13 @@
       i.mdi-navigation-menu
 
 // Top Section
-.parallax-container
+.parallax-container.valign-wrapper
   br
   br
-  h1.header.center.red-text.text-darken-2 EAT/KISS
 
-  .row.center
-    h5.header.col.s12.light.white-text A boutique agency suited for your needs.
+  .row.center.valign
+    h1.header.center.red-text.text-darken-2 EAT/KISS
+    h5.header.col.s12.light.white-text A boutique agency suited for your needs
     h6.header.col.s12.light.white-text Located in Miami
 
   .parallax
@@ -32,7 +32,7 @@
 
     .section
       p.flow-text.center.
-        EAT/KISS a project-based boutique agency that provides most types of services. We find the right people and places you need. We adapt to your needs.
+        We are a project-based boutique agency that provides a variety of services. We find the right resources for your project.
    
     br
     br
@@ -41,20 +41,27 @@
       each services
         .col.s12.m6.l4
           .card
-            .card-image
-              a.modal-trigger.waves-effect.waves-light(href="##{this.shortName}")
-                img(src="#{this.mainImg}")
+            if hasImgs
+             .card-image
+             if hasCopy
+               a.modal-trigger.waves-effect.waves-light(href="##{shortName}")
+                img.responsive-img(src="#{mainImg.img}" alt="#{mainImg.alt}")
+             else
+                img.responsive-img(src="#{mainImg.img}" alt="#{mainImg.alt}")
             .card-content.center
-              a.modal-trigger(href="##{this.shortName}")
+              if hasCopy
+               a.modal-trigger(href="##{shortName}")
+                span.card-title #{this.name}
+              else
                 span.card-title #{this.name}
 
 // Call to Action
-.parallax-container
+ .parallax-container
   .parallax
     img(src="miami_sunrise.jpg" alt="miami_sunrise")
   
 
-.section
+ .section
   .container
 
   br
@@ -74,18 +81,20 @@
 
 // Modals
 each services
-  div(id="#{this.shortName}" class="modal")
+ if hasCopy
+  div(id="#{shortName}" class="modal")
     .modal-content
       .row
+        each this.copy
+          p.
+            #{this}
+      if hasImgs
+       .row
         .slider
           ul.slides
             each this.imgs
               li
                 img.responsive-img(src="#{img}" alt="#{alt}")
-      .row
-        each this.copy
-          p.
-            #{this}
 
 #client.modal
   .modal-content
@@ -114,16 +123,19 @@ footer.page-footer.red
         h5.white-text Connect with us and we'll connect you
 
       nav
-       .col.l3.s12.offset-l3.nav-wrapper
+       .col.l4.s12.offset-l2.nav-wrapper
         ul
           li
-            a.white-text(href="#!")
+            a.white-text(href="mailto:hello@miamicurator.com?Subject=EATKiss%20Contact")
+              i.fa.fa-envelope.fa-2x
+          li
+            a.white-text(href="https://instagram.com/miamicurator/")
               i.fa.fa-instagram.fa-2x
           li
-            a.white-text(href="#!")
+            a.white-text(href="https://twitter.com/miamicurator")
               i.fa.fa-twitter.fa-2x
           li
-            a.white-text(href="#!")
+            a.white-text(href="https://www.facebook.com/MiamiCurator")
               i.fa.fa-facebook.fa-2x
 
   .footer-copyright
